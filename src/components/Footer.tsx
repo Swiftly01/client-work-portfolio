@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-border">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="py-8 border-t border-border"
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-2xl font-display font-bold text-gradient">
@@ -19,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
