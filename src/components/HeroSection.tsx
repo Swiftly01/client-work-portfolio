@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -14,35 +15,46 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8 animate-slide-up">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
+          >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">Web3 Marketing & Project Management</span>
-          </div>
+          </motion.div>
 
           {/* Main Heading */}
-          <h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-slide-up"
-            style={{ animationDelay: "0.1s" }}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6"
           >
             Building the{" "}
             <span className="text-gradient">Future</span>
             <br />
             of Web3 Projects
-          </h1>
+          </motion.h1>
 
           {/* Subheading */}
-          <p 
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
             Strategic marketing and seamless project management for blockchain startups, 
             DAOs, and DeFi protocols. Let's bring your vision to life.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button variant="hero" size="xl" className="group">
               Start a Project
@@ -51,12 +63,14 @@ const HeroSection = () => {
             <Button variant="glow" size="xl">
               View Portfolio
             </Button>
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div 
-            className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border"
           >
             {[
               { value: "50+", label: "Projects Delivered" },
@@ -70,7 +84,7 @@ const HeroSection = () => {
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

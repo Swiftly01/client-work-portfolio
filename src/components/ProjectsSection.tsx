@@ -1,5 +1,6 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -33,7 +34,13 @@ const ProjectsSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+        >
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
               Featured <span className="text-gradient">Projects</span>
@@ -46,13 +53,17 @@ const ProjectsSection = () => {
             View All Projects
             <ArrowUpRight className="w-4 h-4" />
           </Button>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500"
             >
               {/* Gradient Header */}
@@ -90,7 +101,7 @@ const ProjectsSection = () => {
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
