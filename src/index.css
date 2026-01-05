@@ -4,53 +4,226 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║                         COLOR DOCUMENTATION                                ║
+ * ╠═══════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                           ║
+ * ║  🎨 DESIGN SYSTEM COLORS                                                  ║
+ * ║  ──────────────────────────────────────────────────────────────────────── ║
+ * ║                                                                           ║
+ * ║  PRIMARY COLORS                                                           ║
+ * ║  ├─ --primary: Teal/Cyan (174 72% 56%)                                    ║
+ * ║  │   Used: Buttons, links, glows, accent highlights                       ║
+ * ║  │   Sections: Hero CTA, Navigation buttons, Footer links                 ║
+ * ║  │                                                                        ║
+ * ║  └─ --primary-foreground: Dark background text on primary                 ║
+ * ║      Used: Text on primary-colored buttons                                ║
+ * ║                                                                           ║
+ * ║  ACCENT COLORS                                                            ║
+ * ║  ├─ --accent: Purple (270 60% 60%)                                        ║
+ * ║  │   Used: Gradient endpoints, secondary highlights                       ║
+ * ║  │   Sections: Hero gradient text, Background effects                     ║
+ * ║  │                                                                        ║
+ * ║  └─ --accent-foreground: Light text on accent surfaces                    ║
+ * ║                                                                           ║
+ * ║  BACKGROUND & SURFACE COLORS                                              ║
+ * ║  ├─ --background: Page background                                         ║
+ * ║  │   Dark: Deep navy (222 47% 6%) | Light: Off-white (210 40% 98%)        ║
+ * ║  │   Used: Body background, main content areas                            ║
+ * ║  │                                                                        ║
+ * ║  ├─ --foreground: Main text color                                         ║
+ * ║  │   Dark: Off-white (210 40% 98%) | Light: Deep navy (222 47% 11%)       ║
+ * ║  │   Used: All primary text content                                       ║
+ * ║  │                                                                        ║
+ * ║  ├─ --card: Card/panel backgrounds                                        ║
+ * ║  │   Dark: Slightly lighter navy (222 47% 8%)                             ║
+ * ║  │   Light: Pure white (0 0% 100%)                                        ║
+ * ║  │   Used: Service cards, Project cards, About section                    ║
+ * ║  │                                                                        ║
+ * ║  ├─ --secondary: Secondary surface color                                  ║
+ * ║  │   Dark: Navy (222 47% 12%) | Light: Light gray (220 14% 96%)           ║
+ * ║  │   Used: Secondary buttons, subtle backgrounds                          ║
+ * ║  │                                                                        ║
+ * ║  └─ --muted: Subtle backgrounds and muted text                            ║
+ * ║      Dark: (222 30% 15%) | Light: (220 14% 95%)                           ║
+ * ║      Used: Disabled states, placeholder text, subtle dividers             ║
+ * ║                                                                           ║
+ * ║  BORDER & INPUT COLORS                                                    ║
+ * ║  ├─ --border: Border color for all elements                               ║
+ * ║  │   Dark: (222 30% 18%) | Light: (220 13% 91%)                           ║
+ * ║  │   Used: Card borders, input borders, dividers                          ║
+ * ║  │                                                                        ║
+ * ║  └─ --input: Form input backgrounds                                       ║
+ * ║      Same as border, used for input field styling                         ║
+ * ║                                                                           ║
+ * ║  SPECIAL EFFECT COLORS                                                    ║
+ * ║  ├─ --glow-primary: Primary glow effect (teal)                            ║
+ * ║  │   Used: Button hovers, card hover effects                              ║
+ * ║  │                                                                        ║
+ * ║  ├─ --glow-accent: Accent glow effect (purple)                            ║
+ * ║  │   Used: Secondary glow effects, background radials                     ║
+ * ║  │                                                                        ║
+ * ║  └─ --gradient-start/end: Gradient color stops                            ║
+ * ║      Used: Hero text gradient, button gradients                           ║
+ * ║                                                                           ║
+ * ║  ──────────────────────────────────────────────────────────────────────── ║
+ * ║                                                                           ║
+ * ║  📍 SECTION-SPECIFIC COLOR USAGE                                          ║
+ * ║  ──────────────────────────────────────────────────────────────────────── ║
+ * ║                                                                           ║
+ * ║  NAVIGATION                                                               ║
+ * ║  ├─ Background: transparent → background/80 (on scroll)                   ║
+ * ║  ├─ Logo: text-gradient (primary → accent)                                ║
+ * ║  ├─ Links: muted-foreground → foreground (hover)                          ║
+ * ║  └─ CTA Button: hero variant (gradient primary → accent)                  ║
+ * ║                                                                           ║
+ * ║  HERO SECTION                                                             ║
+ * ║  ├─ Background: background with radial gradients                          ║
+ * ║  ├─ Main heading: text-gradient (primary → accent)                        ║
+ * ║  ├─ Subheading: muted-foreground                                          ║
+ * ║  ├─ Decorative orbs: primary/30, accent/20                                ║
+ * ║  └─ CTA Buttons: hero (gradient) & glow (outline)                         ║
+ * ║                                                                           ║
+ * ║  SERVICES SECTION                                                         ║
+ * ║  ├─ Background: background                                                ║
+ * ║  ├─ Section title: text-gradient                                          ║
+ * ║  ├─ Cards: card background with border-gradient                           ║
+ * ║  ├─ Icons: primary color                                                  ║
+ * ║  └─ Card text: foreground, muted-foreground                               ║
+ * ║                                                                           ║
+ * ║  PROJECTS SECTION                                                         ║
+ * ║  ├─ Background: background                                                ║
+ * ║  ├─ Section title: text-gradient                                          ║
+ * ║  ├─ Project cards: card with card-glow effect                             ║
+ * ║  ├─ Tags: secondary background                                            ║
+ * ║  └─ Links: primary color with hover glow                                  ║
+ * ║                                                                           ║
+ * ║  ABOUT SECTION                                                            ║
+ * ║  ├─ Background: card                                                      ║
+ * ║  ├─ Section title: text-gradient                                          ║
+ * ║  ├─ Stats: primary color numbers                                          ║
+ * ║  └─ Text: foreground, muted-foreground                                    ║
+ * ║                                                                           ║
+ * ║  CONTACT SECTION                                                          ║
+ * ║  ├─ Background: background                                                ║
+ * ║  ├─ Section title: text-gradient                                          ║
+ * ║  ├─ Form inputs: input background with border                             ║
+ * ║  ├─ Submit button: hero variant                                           ║
+ * ║  └─ Contact info: muted-foreground with primary icons                     ║
+ * ║                                                                           ║
+ * ║  FOOTER                                                                   ║
+ * ║  ├─ Background: card                                                      ║
+ * ║  ├─ Logo: text-gradient                                                   ║
+ * ║  ├─ Links: muted-foreground → primary (hover)                             ║
+ * ║  └─ Social icons: muted-foreground → primary (hover)                      ║
+ * ║                                                                           ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+
 @layer base {
+  /* ═══════════════════════════════════════════════════════════════════════════
+     LIGHT MODE (Default)
+     ═══════════════════════════════════════════════════════════════════════════ */
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    /* Background & Foreground */
+    --background: 210 40% 98%;           /* Off-white page background */
+    --foreground: 222 47% 11%;           /* Deep navy text */
 
-    --card: 222 47% 8%;
+    /* Card & Popover surfaces */
+    --card: 0 0% 100%;                   /* Pure white cards */
+    --card-foreground: 222 47% 11%;      /* Dark text on cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Teal/Cyan - Main accent color */
+    --primary: 174 72% 40%;              /* Slightly darker for light mode visibility */
+    --primary-foreground: 0 0% 100%;     /* White text on primary */
+
+    /* Secondary: Light gray surfaces */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted: Subtle backgrounds */
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 8% 46%;
+
+    /* Accent: Purple - Gradient endpoint */
+    --accent: 270 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive: Error states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 174 72% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom Web3 tokens - Light mode adjusted */
+    --glow-primary: 174 72% 40%;
+    --glow-accent: 270 60% 55%;
+    --gradient-start: 174 72% 40%;
+    --gradient-end: 270 60% 55%;
+    
+    /* Shadows & Effects - Light mode */
+    --shadow-glow: 0 0 60px hsl(var(--primary) / 0.15);
+    --shadow-glow-sm: 0 0 30px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 4px 40px hsl(0 0% 0% / 0.08);
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════════════
+     DARK MODE
+     ═══════════════════════════════════════════════════════════════════════════ */
+  .dark {
+    /* Background & Foreground */
+    --background: 222 47% 6%;            /* Deep navy background */
+    --foreground: 210 40% 98%;           /* Off-white text */
+
+    /* Card & Popover surfaces */
+    --card: 222 47% 8%;                  /* Slightly lighter navy */
     --card-foreground: 210 40% 98%;
-
     --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 174 72% 56%;
-    --primary-foreground: 222 47% 6%;
+    /* Primary: Teal/Cyan - Main accent color */
+    --primary: 174 72% 56%;              /* Vibrant teal */
+    --primary-foreground: 222 47% 6%;   /* Dark text on primary */
 
+    /* Secondary: Navy surfaces */
     --secondary: 222 47% 12%;
     --secondary-foreground: 210 40% 98%;
 
+    /* Muted: Darker subtle backgrounds */
     --muted: 222 30% 15%;
     --muted-foreground: 215 20% 55%;
 
+    /* Accent: Purple - Gradient endpoint */
     --accent: 270 60% 60%;
     --accent-foreground: 210 40% 98%;
 
+    /* Destructive: Error states */
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
+    /* Borders & Inputs */
     --border: 222 30% 18%;
     --input: 222 30% 18%;
     --ring: 174 72% 56%;
 
-    --radius: 0.75rem;
-
-    /* Custom Web3 tokens */
+    /* Custom Web3 tokens - Dark mode */
     --glow-primary: 174 72% 56%;
     --glow-accent: 270 60% 60%;
     --gradient-start: 174 72% 56%;
     --gradient-end: 270 60% 60%;
     
-    /* Shadows & Effects */
+    /* Shadows & Effects - Dark mode (more prominent) */
     --shadow-glow: 0 0 60px hsl(var(--primary) / 0.3);
     --shadow-glow-sm: 0 0 30px hsl(var(--primary) / 0.2);
     --shadow-card: 0 4px 40px hsl(0 0% 0% / 0.4);
-  }
-
-  .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
   }
 }
 
@@ -61,6 +234,17 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Light mode background effects */
+  :root body {
+    background-image: 
+      radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, hsl(var(--accent) / 0.03) 0%, transparent 40%);
+  }
+
+  /* Dark mode background effects (more visible) */
+  .dark body {
     background-image: 
       radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 50%, hsl(var(--accent) / 0.05) 0%, transparent 40%);
@@ -83,7 +267,7 @@
 
   .border-gradient {
     border: 1px solid transparent;
-    background: linear-gradient(var(--background), var(--background)) padding-box,
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
                 linear-gradient(135deg, hsl(var(--primary) / 0.5), hsl(var(--accent) / 0.5)) border-box;
   }
 
