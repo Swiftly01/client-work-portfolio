@@ -5,7 +5,7 @@ const services = [
   {
     icon: Megaphone,
     title: "Web3 Marketing",
-    description: "Strategic go-to-market campaigns, influencer partnerships, and community-driven growth for blockchain projects.",
+    description: "I design and execute marketing strategies that help Web3 products gain traction, grow communities, and communicate value clearly in a noisy market",
   },
   {
     icon: FolderKanban,
@@ -36,26 +36,26 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="services" className="relative py-24">
+      <div className="container px-6 mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl font-display">
             What I <span className="text-gradient">Do</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Comprehensive Web3 services designed to accelerate your project's growth and success in the decentralized ecosystem.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -63,15 +63,15 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-8 rounded-2xl bg-card border border-border card-glow transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              className="p-8 transition-all duration-500 border group rounded-2xl bg-card border-border card-glow hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center justify-center mb-6 transition-transform duration-300 w-14 h-14 rounded-xl bg-gradient-primary group-hover:scale-110">
                 <service.icon className="w-7 h-7 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors">
+              <h3 className="mb-3 text-xl font-semibold transition-colors font-display group-hover:text-primary">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
             </motion.div>
