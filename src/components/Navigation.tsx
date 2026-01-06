@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -6,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +18,10 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+    { href: "/services", label: "Services" },
+    { href: "/projects", label: "Projects" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -32,24 +34,28 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-display font-bold text-gradient">
+          <Link to="/" className="text-2xl font-display font-bold text-gradient">
             FIGMS
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
+                to={link.href}
+                className={`transition-colors duration-300 font-medium ${
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <ThemeToggle />
-            <Button variant="hero" size="sm">
-              Let's Talk
+            <Button variant="hero" size="sm" asChild>
+              <Link to="/contact">Let's Talk</Link>
             </Button>
           </div>
 
@@ -70,17 +76,23 @@ const Navigation = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-background rounded-lg">
             <div className="flex flex-col gap-4 px-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
+                  to={link.href}
+                  className={`transition-colors duration-300 font-medium ${
+                    location.pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button variant="hero" size="sm" className="w-fit">
-                Let's Talk
+              <Button variant="hero" size="sm" className="w-fit" asChild>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  Let's Talk
+                </Link>
               </Button>
             </div>
           </div>
