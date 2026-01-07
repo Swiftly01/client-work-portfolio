@@ -1,52 +1,63 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
-    title: "DeFi Protocol Launch",
-    category: "Token Launch & Marketing",
-    description: "Led the complete marketing strategy and launch for a DeFi lending protocol, achieving $5M TVL in the first month.",
+    title: "Odin Telegram Bots Launch",
+    src: "/odin.jpg",
+    category: "Bot Launch & Marketing",
+    description:
+      "I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth",
     metrics: ["$5M TVL", "15K Users", "50+ Partners"],
     gradient: "from-primary to-accent",
+    slug: "defi-protocol-launch",
   },
   {
-    title: "NFT Marketplace Growth",
+    title: "Powercouple memecoin($PCP)",
+    src: "/power.jpg",
     category: "Community & Growth",
-    description: "Built and scaled the community from 0 to 50K members, driving organic growth through strategic partnerships.",
+    description:
+      "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024.",
     metrics: ["50K Members", "100K NFTs", "Top 10 Marketplace"],
     gradient: "from-accent to-primary",
+    slug: "nft-marketplace-growth",
   },
   {
     title: "DAO Governance Setup",
+    src: "x.jpg",
     category: "DAO Operations",
-    description: "Designed and implemented governance framework for a major DAO, including tokenomics and proposal systems.",
+    description:
+      "Designed and implemented governance framework for a major DAO, including tokenomics and proposal systems.",
     metrics: ["$20M Treasury", "10K Voters", "200+ Proposals"],
     gradient: "from-primary via-accent to-primary",
+    slug: "dao-governance-setup",
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="relative py-24">
       {/* Background Accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/30 to-transparent" />
-      
-      <div className="container mx-auto px-6 relative z-10">
+
+      <div className="container relative z-10 px-6 mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+          className="flex flex-col mb-16 md:flex-row md:items-end md:justify-between"
         >
           <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="mb-4 text-4xl font-bold md:text-5xl font-display">
               Featured <span className="text-gradient">Projects</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl">
-              A selection of successful Web3 projects I've helped bring to life and scale.
+            <p className="max-w-xl text-lg text-muted-foreground">
+              A selection of successful Web3 projects I've helped bring to life
+              and scale.
             </p>
           </div>
           <Button variant="glow" className="mt-6 md:mt-0">
@@ -56,7 +67,7 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -64,42 +75,48 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500"
+              className="relative overflow-hidden transition-all duration-500 border group rounded-2xl bg-card border-border hover:border-primary/50"
             >
               {/* Gradient Header */}
-              <div className={`h-40 bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
+              {/* <div className={`h-40 bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
                 <div className="absolute inset-0 bg-background/20" />
+              </div> */}
+              <div>
+                <img src={project.src} alt="test" />
               </div>
-              
+
               {/* Content */}
-              <div className="p-6 -mt-8 relative">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-secondary text-muted-foreground mb-4">
+              <div className="relative p-6 -mt-8">
+                <span className="inline-block px-3 py-1 mb-4 text-xs font-medium rounded-full bg-secondary text-muted-foreground">
                   {project.category}
                 </span>
-                <h3 className="text-2xl font-display font-semibold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="mb-3 text-2xl font-semibold transition-colors font-display group-hover:text-primary">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="mb-6 leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
-                
+
                 {/* Metrics */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.metrics.map((metric, i) => (
-                    <span key={i} className="px-3 py-1 rounded-lg bg-secondary text-sm font-medium text-foreground">
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-sm font-medium rounded-lg bg-secondary text-foreground"
+                    >
                       {metric}
                     </span>
                   ))}
                 </div>
 
                 {/* Link */}
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
+                <Link
+                  to={`/case-study/${project.slug}`}
+                  className="inline-flex items-center gap-2 font-medium transition-all text-primary hover:gap-3"
                 >
-                  View Case Study
+                  View 
                   <ExternalLink className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
