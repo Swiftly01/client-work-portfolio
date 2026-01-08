@@ -12,7 +12,7 @@ const projects = [
       "I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth",
     metrics: ["$5M TVL", "15K Users", "50+ Partners"],
     gradient: "from-primary to-accent",
-    slug: "defi-protocol-launch",
+    slug: "odin-telegram-bots-launch",
   },
   {
     title: "Powercouple memecoin($PCP)",
@@ -22,17 +22,17 @@ const projects = [
       "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024.",
     metrics: ["50K Members", "100K NFTs", "Top 10 Marketplace"],
     gradient: "from-accent to-primary",
-    slug: "nft-marketplace-growth",
+    slug: "powercouple-memecoin",
   },
   {
-    title: "DAO Governance Setup",
-    src: "x.jpg",
+    title: "CRAZYLIVEDAO Project Manager",
+    src: "crazylive.jpg",
     category: "DAO Operations",
     description:
-      "Designed and implemented governance framework for a major DAO, including tokenomics and proposal systems.",
+      "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
     metrics: ["$20M Treasury", "10K Voters", "200+ Proposals"],
     gradient: "from-primary via-accent to-primary",
-    slug: "dao-governance-setup",
+    slug: "crazylivedao-project-manager",
   },
 ];
 

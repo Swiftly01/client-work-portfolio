@@ -9,17 +9,18 @@ import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 
 const projects = {
-  "defi-protocol-launch": {
-    title: "DeFi Protocol Launch",
-    category: "Token Launch & Marketing",
+  "odin-telegram-bots-launch": {
+    title: "Odin Telegram Bots Launch",
+    category: "Bot Launch & Marketing",
     description:
-      "Led the complete marketing strategy and launch for a DeFi lending protocol, achieving $5M TVL in the first month.",
+      "I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth.",
     metrics: ["$5M TVL", "15K Users", "50+ Partners"],
-    backgroundSlides: ["/odin.jpg", "/odin-chat.jpg", "/asgard.jpg"],
+    backgroundSlides: ["/odin.jpg", "/odin-chat.jpg", "/asgard.jpg", "/x.jpg"],
     challenge:
       "The client needed to launch a new DeFi lending protocol in a highly competitive market with limited brand recognition and a tight timeline of just 6 weeks.",
     solution:
-      "We developed a comprehensive go-to-market strategy that included influencer partnerships, community building on Discord and Twitter, strategic airdrops, and a phased launch approach to build momentum.",
+      "I Started working with Odin at launch in November 2024.I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth. After that, I became an affiliate, actively promoting the bot.I’m still working closely with the developer and partners.",
+    responsibilities: [],
     results: [
       "Achieved $5M Total Value Locked within 30 days of launch",
       "Grew community to 15,000 active members",
@@ -34,21 +35,22 @@ const projects = {
       "Partnership Development",
     ],
   },
-  "nft-marketplace-growth": {
-    title: "NFT Marketplace Growth",
+  "powercouple-memecoin": {
+    title: "Powercouple memecoin($PCP)",
     category: "Community & Growth",
     description:
-      "Built and scaled the community from 0 to 50K members, driving organic growth through strategic partnerships.",
+      "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024.I Built and scaled the community from 0 to 50K members, driving organic growth through strategic partnerships.",
     metrics: ["50K Members", "100K NFTs", "Top 10 Marketplace"],
     backgroundSlides: [
-      "from-accent via-accent/80 to-primary",
-      "from-primary via-accent/60 to-accent",
-      "from-accent/80 via-primary to-accent",
+      "/power.jpg",
+      "/powercouple-telegram.jpg",
+      "/powercouple-x.jpg",
     ],
     challenge:
       "An emerging NFT marketplace needed to establish itself in a crowded market dominated by established players like OpenSea and Blur.",
     solution:
-      "Focused on building a strong creator community first, offering exclusive features for artists, implementing a referral program, and creating viral marketing campaigns around featured collections.",
+      "I ensured a smooth and well-structured pre-launch, then scaled the community to around 5,000 Telegram members and 5,000 Twitter followers. I also grew Discord engagement to approximately 1,000 members through organic promotion and community campaigns.I managed the core team, coordinated community initiatives, and worked closely with the developer. I also assisted in hiring a developer to build the staking pool and the “Memeverse” feature on the website.The project reached an ATH of $696k market cap before winding down.",
+    responsibilities: [],
     results: [
       "Grew Discord community from 0 to 50,000 verified members",
       "Facilitated trading of over 100,000 NFTs",
@@ -63,26 +65,32 @@ const projects = {
       "Brand Strategy",
     ],
   },
-  "dao-governance-setup": {
-    title: "DAO Governance Setup",
-    category: "DAO Operations",
+  "crazylivedao-project-manager": {
+    title: "CRAZYLIVEDAO Project Manager",
+    category: "CRAZYLIVEDAO Operations",
     description:
-      "Designed and implemented governance framework for a major DAO, including tokenomics and proposal systems.",
+      "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
     metrics: ["$20M Treasury", "10K Voters", "200+ Proposals"],
-    backgroundSlides: [
-      "from-primary via-accent to-primary",
-      "from-accent via-primary to-accent",
-      "from-primary/80 via-accent/80 to-primary/80",
-    ],
+    backgroundSlides: ["/crazylive.jpg", "/dao-meme-token.jpg", "/dao-telegram.jpg"],
     challenge:
       "A decentralized organization with a $20M treasury needed a robust governance framework that would ensure fair representation while maintaining operational efficiency.",
     solution:
-      "Designed a tiered governance system with different voting thresholds for various decision types, implemented snapshot voting, created clear proposal templates, and established working groups for specialized functions.",
+      "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community. The project aimed to expand its presence onto the Solana blockchain.The token initially launched via Pump.fun in January 2024 but lost momentum. I joined the project in August 2024 and took over overall project management.",
+    responsibilities: [
+      "Took full ownership of project strategy and execution",
+      "Curated recovery and growth plans post-launch",
+      "Created and managed all social channels (Twitter/X, Telegram, Discord)",
+      "Rebranded and positioned the Twitter account for growth",
+      "Built and managed the core team",
+      "Planned and executed major community and marketing campaigns",
+      "Hired and coordinated KOLs and influencers",
+      "Set up and managed exchange listing on WEEX",
+      "Oversaw daily operations and ongoing project activities",
+    ],
     results: [
-      "Successfully managed $20M treasury with community oversight",
-      "Engaged 10,000+ token holders in governance",
-      "Processed over 200 community proposals",
-      "Achieved 85% proposal completion rate",
+      "Grew market cap from approximately $45k  to an ATH of ~$8.5M",
+      "Project is still live and actively managed under my supervision",
+      "This role involved both strategic leadership and hands-on execution across community, marketing, listings, and daily operations.",
     ],
     timeline: "3 months",
     services: [
@@ -263,6 +271,25 @@ const CaseStudy = () => {
                 </p>
               </motion.div>
 
+              {project.responsibilities.length !== 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <h2 className="mb-4 text-2xl font-semibold font-display">
+                    Key Responsibilities & Achievements
+                  </h2>
+                  <ul className="space-y-3">
+                    {project.responsibilities.map((result, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{result}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
