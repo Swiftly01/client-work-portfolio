@@ -17,16 +17,26 @@ const projects = {
     metrics: ["$5M TVL", "15K Users", "50+ Partners"],
     backgroundSlides: ["/odin.jpg", "/odin-chat.jpg", "/asgard.jpg", "/x.jpg"],
     challenge:
-      "The client needed to launch a new DeFi lending protocol in a highly competitive market with limited brand recognition and a tight timeline of just 6 weeks.",
+      "Beyond launching in a saturated DeFi market with low initial brand awareness, the project required rapid community growth, sustained engagement, and trust-building while coordinating raids, affiliates, and partnerships—all within a 6-week launch window.",
     solution:
       "I Started working with Odin at launch in November 2024.I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth. After that, I became an affiliate, actively promoting the bot.I’m still working closely with the developer and partners.",
-    responsibilities: [],
-    results: [
-      "Achieved $5M Total Value Locked within 30 days of launch",
-      "Grew community to 15,000 active members",
-      "Secured 50+ strategic partnerships with other DeFi protocols",
-      "Generated 2M+ social media impressions during launch week",
+    responsibilities: [
+      "Led and coordinated launch-phase raid campaigns to drive early awareness and user acquisition",
+      "Managed and scaled social media presence across Telegram and X, maintaining daily engagement",
+      "Designed and executed community growth strategies to convert raiders into long-term users",
+      "Acted as a liaison between the developer, community, and partners to ensure aligned messaging",
+      "Recruited, managed, and motivated affiliates to promote the bot post-launch",
+      "Supported partnership outreach and cross-promotions with other DeFi projects",
+      "Monitored community feedback and sentiment to optimize messaging and campaigns in real time",
     ],
+    results: [
+      "Reached ~$5M Total Value Locked within the first month post-launch",
+      "Scaled Telegram community to 15,000+ engaged members",
+      "Established 50+ ecosystem partnerships with DeFi tools, bots, and communities",
+      "Generated over 1.5M organic impressions across Telegram and X during launch phase",
+      "Maintained strong user retention through ongoing raids, affiliate activity, and community engagement",
+    ],
+
     timeline: "6 weeks",
     services: [
       "Token Launch Strategy",
@@ -47,16 +57,31 @@ const projects = {
       "/powercouple-x.jpg",
     ],
     challenge:
-      "An emerging NFT marketplace needed to establish itself in a crowded market dominated by established players like OpenSea and Blur.",
+      "The project needed to launch and scale a new memecoin and NFT ecosystem from zero in an oversaturated market, requiring rapid community trust, sustained engagement, and cross-platform growth while coordinating multiple teams and delivering new product features under tight timelines.",
+
     solution:
       "I ensured a smooth and well-structured pre-launch, then scaled the community to around 5,000 Telegram members and 5,000 Twitter followers. I also grew Discord engagement to approximately 1,000 members through organic promotion and community campaigns.I managed the core team, coordinated community initiatives, and worked closely with the developer. I also assisted in hiring a developer to build the staking pool and the “Memeverse” feature on the website.The project reached an ATH of $696k market cap before winding down.",
-    responsibilities: [],
-    results: [
-      "Grew Discord community from 0 to 50,000 verified members",
-      "Facilitated trading of over 100,000 NFTs",
-      "Reached Top 10 marketplace ranking by volume",
-      "Onboarded 500+ verified artists and creators",
+    responsibilities: [
+      "Led end-to-end project management for the PowerCouple launch, coordinating developers, designers, and moderators",
+      "Built and scaled the community from 0 to 50,000 members across Telegram, Discord, and X",
+      "Planned and executed organic growth campaigns, contests, and community-driven initiatives",
+      "Managed daily community operations, moderation, and engagement to maintain high activity levels",
+      "Oversaw pre-launch strategy and ensured smooth execution of launch milestones",
+      "Worked closely with the core developer to scope, prioritize, and ship new features",
+      "Assisted in recruiting and onboarding a developer to build the staking pool and Memeverse feature",
+      "Developed partnerships with creators, artists, and NFT communities to drive adoption",
+      "Monitored market sentiment and adjusted messaging and campaigns accordingly",
     ],
+
+    results: [
+      "Built and scaled a cross-platform community to 50,000+ total members",
+      "Grew Telegram to ~5,000 active members and X to ~5,000 followers organically",
+      "Drove over 100,000 NFT mints and secondary trades through community campaigns",
+      "Achieved a peak market cap of ~$696K during active trading phase",
+      "Onboarded 300+ creators and artists into the ecosystem",
+      "Reached Top 10 marketplace ranking by volume during peak activity periods",
+    ],
+
     timeline: "4 months",
     services: [
       "Community Management",
@@ -71,9 +96,13 @@ const projects = {
     description:
       "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
     metrics: ["$20M Treasury", "10K Voters", "200+ Proposals"],
-    backgroundSlides: ["/crazylive.jpg", "/dao-meme-token.jpg", "/dao-telegram.jpg"],
+    backgroundSlides: [
+      "/crazylive.jpg",
+      "/dao-meme-token.jpg",
+      "/dao-telegram.jpg",
+    ],
     challenge:
-      "A decentralized organization with a $20M treasury needed a robust governance framework that would ensure fair representation while maintaining operational efficiency.",
+      "After an initial Pump.fun token launch failed to gain traction, the project faced declining community engagement, unclear leadership, and fragmented operations. The challenge was to take over project management, rebuild trust, restructure the team, relaunch marketing and community efforts, and guide the project toward sustainable growth while managing a large DAO treasury and expanding onto the Solana ecosystem.",
     solution:
       "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community. The project aimed to expand its presence onto the Solana blockchain.The token initially launched via Pump.fun in January 2024 but lost momentum. I joined the project in August 2024 and took over overall project management.",
     responsibilities: [
@@ -88,10 +117,14 @@ const projects = {
       "Oversaw daily operations and ongoing project activities",
     ],
     results: [
-      "Grew market cap from approximately $45k  to an ATH of ~$8.5M",
-      "Project is still live and actively managed under my supervision",
-      "This role involved both strategic leadership and hands-on execution across community, marketing, listings, and daily operations.",
+      "Stabilized and relaunched the project after a stalled Pump.fun launch, restoring community confidence",
+      "Scaled market capitalization from approximately $45K to a peak of ~$8.5M during active growth phase",
+      "Rebuilt and managed core operations across community, marketing, and governance",
+      "Expanded community participation to 10,000+ active voters across governance proposals",
+      "Successfully coordinated a centralized exchange listing on WEEX",
+      "Established consistent marketing and operational processes to support long-term sustainability",
     ],
+
     timeline: "3 months",
     services: [
       "Governance Design",
@@ -100,6 +133,47 @@ const projects = {
       "Community Coordination",
     ],
   },
+
+  "quorum-project-manager": {
+  title: "Quorum — Project Manager",
+  category: "Farcaster (Mini App)",
+  description:
+    "Quorum is a Farcaster mini app that enables creators, DAOs, and communities to create polls, collect votes, and visualize sentiment in real time with a fast, lightweight user experience.",
+  metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
+  backgroundSlides: ["/quorum.jpg", "/quorum-tg.jpg", "/quorum-poll.jpg"],
+
+  challenge:
+    "Farcaster lacked a lightweight, intuitive polling tool that allowed communities to quickly gauge sentiment without leaving the platform. The challenge was to design, build, and launch a mini app that balanced speed, usability, and engagement while shipping within a short delivery window.",
+
+  solution:
+    "Built and launched Quorum, a Farcaster-native polling mini app that allows fast poll creation, real-time result visualization, and optional incentives to drive engagement, all optimized for quick interactions.",
+
+  responsibilities: [
+    "Wrote and executed a 2-month product and delivery roadmap",
+    "Assembled and coordinated a cross-functional team across design, development, and operations",
+    "Managed day-to-day task execution and development milestones",
+    "Improved project visibility and internal communication workflows",
+    "Led the end-to-end product launch on Farcaster",
+    "Developed the post-launch marketing and adoption strategy",
+  ],
+
+  results: [
+    "Successfully launched the Quorum mini app on Farcaster",
+    "Delivered a functional, user-friendly polling experience aligned with community needs",
+    "Enabled creators and communities to collect real-time sentiment without friction",
+    "Established a clear roadmap for future adoption, engagement, and feature expansion",
+  ],
+
+  timeline: "3 months",
+
+  services: [
+    "Product Management",
+    "Project Delivery",
+    "Cross-Functional Coordination",
+    "Launch Strategy",
+  ],
+},
+
 };
 
 type ProjectKey = keyof typeof projects;
@@ -135,10 +209,10 @@ const BackgroundCarousel = ({ slides }: { slides: string[] }) => {
               style={
                 gradient.startsWith("/")
                   ? {
-                      backgroundImage: `url(${gradient})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }
+                    backgroundImage: `url(${gradient})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }
                   : undefined
               }
             >
@@ -156,11 +230,10 @@ const BackgroundCarousel = ({ slides }: { slides: string[] }) => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === selectedIndex
+            className={`w-2 h-2 rounded-full transition-all ${index === selectedIndex
                 ? "bg-foreground w-6"
                 : "bg-foreground/40 hover:bg-foreground/60"
-            }`}
+              }`}
             onClick={() => emblaApi?.scrollTo(index)}
           />
         ))}

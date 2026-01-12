@@ -10,7 +10,7 @@ const projects = [
     category: "Bot Launch & Marketing",
     description:
       "I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth",
-    metrics: ["$5M TVL", "15K Users", "50+ Partners"],
+    metrics: ["$5M TVL", "15K Active Users", "50+ Partnerships"],
     gradient: "from-primary to-accent",
     slug: "odin-telegram-bots-launch",
   },
@@ -20,7 +20,7 @@ const projects = [
     category: "Community & Growth",
     description:
       "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024.",
-    metrics: ["50K Members", "100K NFTs", "Top 10 Marketplace"],
+    metrics: ["50K Community Members", "$696K ATH", "100K+ NFTs Traded"],
     gradient: "from-accent to-primary",
     slug: "powercouple-memecoin",
   },
@@ -30,9 +30,19 @@ const projects = [
     category: "DAO Operations",
     description:
       "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
-    metrics: ["$20M Treasury", "10K Voters", "200+ Proposals"],
+    metrics: ["$20M Treasury", "10K+ Voters", "WEEX CEX Listing"],
     gradient: "from-primary via-accent to-primary",
     slug: "crazylivedao-project-manager",
+  },
+  {
+    title: "Farcaster (Mini App)",
+    src: "quorum.jpg",
+    category: "Project manager",
+    description:
+      "Quorum is a Farcaster mini app that allows users to create simple polls, collect votes, and visualize community sentiment in real time.",
+    metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
+    gradient: "from-primary via-accent to-primary",
+    slug: "quorum-project-manager",
   },
 ];
 
@@ -114,7 +124,7 @@ const ProjectsSection = () => {
                   to={`/case-study/${project.slug}`}
                   className="inline-flex items-center gap-2 font-medium transition-all text-primary hover:gap-3"
                 >
-                  View 
+                  View
                   <ExternalLink className="w-4 h-4" />
                 </Link>
               </div>
