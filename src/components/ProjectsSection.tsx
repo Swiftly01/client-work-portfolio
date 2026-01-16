@@ -44,6 +44,40 @@ const projects = [
     gradient: "from-primary via-accent to-primary",
     slug: "quorum-project-manager",
   },
+  {
+    title: "Beast Raid lead",
+    src: "beast-seller.jpg",
+    category: "Marketing Strategies ",
+    description:
+      "I served as Bullposter, Raid Lead, and Community Manager for Project Beast, taking over operations after the project was CTO’d.",
+    metrics: [
+      "5K+ Community",
+      "25K+ Raid Interactions",
+      "Trending on Farcaster",
+    ],
+    gradient: "from-primary via-accent to-primary",
+    slug: "beast-raid-lead",
+  },
+  {
+    title: "Moaner Project Marketer ",
+    src: "moaner.jpg",
+    category: "Project Marketer",
+    description:
+      "Moaner is an Ethereum-based project inspired by a Matt Furie character. Similar to $BEAST, the project experienced strong market traction and reached an all-time high (ATH) market cap of $18.8M.",
+    metrics: ["$18.8M ATH", "10K+ Holders", "Sustained X Visibility"],
+    gradient: "from-primary via-accent to-primary",
+    slug: "moaner-project-marketer",
+  },
+  {
+    title: "ELECTROGLE Marketing",
+    src: "electro.jpg",
+    category: " Marketing strategist",
+    description:
+      "$ELECTROGLE is a meme token inspired by a character from a Matt Furie book. The project achieved an all-time high (ATH) market cap of over $535K.",
+    metrics: ["$50K → $535K ATH", "3K+ Community", "Daily X & TG Activity"],
+    gradient: "from-primary via-accent to-primary",
+    slug: "electrogle-project-marketer",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -70,9 +104,12 @@ const ProjectsSection = () => {
               and scale.
             </p>
           </div>
-          <Button variant="glow" className="mt-6 md:mt-0">
-            View All Projects
-            <ArrowUpRight className="w-4 h-4" />
+
+          <Button asChild variant="glow" className="mt-6 md:mt-0">
+            <Link to="/projects">
+              View All Projects
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </Button>
         </motion.div>
 

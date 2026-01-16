@@ -23,14 +23,12 @@ const projects = [
     category: "PCP",
     description:
       "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024",
-     metrics: ["50K Community Members", "$696K ATH", "100K+ NFTs Traded"],
+    metrics: ["50K Community Members", "$696K ATH", "100K+ NFTs Traded"],
     links: [
-     
       {
         label: "Twitter",
         value: " https://x.com/RicvinnyNetwork/status/2008448400497266854?s=20",
       },
-      
     ],
     gradient: "from-accent/20 to-primary/20",
   },
@@ -40,7 +38,7 @@ const projects = [
     description:
       "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
     metrics: ["$20M Treasury", "10K+ Voters", "WEEX CEX Listing"],
-   links: [
+    links: [
       {
         label: "Crazylive.ai",
         value: "Crazylive.ai",
@@ -56,13 +54,13 @@ const projects = [
     ],
     gradient: "from-primary/20 to-accent/20",
   },
-   {
+  {
     title: "Quorum  Project Manager",
     category: "Project Manager",
     description:
-    "Quorum is a Farcaster mini app that allows users to create simple polls, collect votes, and visualize community sentiment in real time.",
-       metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
-   links: [
+      "Quorum is a Farcaster mini app that allows users to create simple polls, collect votes, and visualize community sentiment in real time.",
+    metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
+    links: [
       {
         label: "Beastsellermeme",
         value: "https://t.me/beastsellermeme",
@@ -70,7 +68,56 @@ const projects = [
     ],
     gradient: "from-primary/20 to-accent/20",
   },
-  
+  {
+    title: "Beast Raid lead",
+    category: "Marketing Strategies",
+    description:
+      "Through strategic community coordination and narrative-driven marketing, the project reached an all-time high (ATH) of $7.2M market cap.",
+    metrics: [
+      "5K+ Community Members",
+      "25K+ Organic Raid Interactions",
+      "Daily Trending Presence on Farcaster",
+    ],
+    links: [
+      {
+        label: "Beastraidlead",
+        value: "https://x.com/RicvinnyNetwork/status/1932410280069218379?s=20",
+      },
+    ],
+    gradient: "from-primary/20 to-accent/20",
+  },
+  {
+    title: "Moaner Project Marketer",
+    category: "Full-Stack Project Marketing",
+    description:
+      "Moaner is an Ethereum-based project inspired by a Matt Furie character. Led coordinated marketing efforts across raids, narrative positioning, and community growth, contributing to strong market momentum.",
+    metrics: [
+      "$18.8M ATH Market Cap",
+      "10K+ Holder Wallets at Peak",
+      "Sustained Trending on Crypto Twitter",
+    ],
+    links: [
+      {
+        label: "moaner",
+        value: "https://x.com/RicvinnyNetwork/status/1974922569179422850?s=20",
+      },
+    ],
+    gradient: "from-primary/20 to-accent/20",
+  },
+  {
+    title: "ELECTROGLE Marketing",
+    category: "Core Idea & Strategy",
+    description:
+      "The strategy focused on early-stage marketing execution, rapid narrative building, and coordinated exposure to drive momentum from a low market cap.",
+    metrics: ["$50K → $535K ATH", "3K+ Community", "Daily X & TG Activity"],
+    links: [
+      {
+        label: "moaner",
+        value: "https://x.com/RicvinnyNetwork/status/1974922569179422850?s=20",
+      },
+    ],
+    gradient: "from-primary/20 to-accent/20",
+  },
 ];
 
 const Projects = () => {
@@ -149,7 +196,8 @@ const Projects = () => {
                             href={link.value}
                             className="inline-flex items-center gap-1 text-sm font-medium transition-all text-primary hover:gap-2"
                           >
-                            View project info <ArrowUpRight className="w-4 h-4" />
+                            View project info{" "}
+                            <ArrowUpRight className="w-4 h-4" />
                           </a>
                         </li>
                       ))}

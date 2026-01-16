@@ -135,45 +135,181 @@ const projects = {
   },
 
   "quorum-project-manager": {
-  title: "Quorum — Project Manager",
-  category: "Farcaster (Mini App)",
-  description:
-    "Quorum is a Farcaster mini app that enables creators, DAOs, and communities to create polls, collect votes, and visualize sentiment in real time with a fast, lightweight user experience.",
-  metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
-  backgroundSlides: ["/quorum.jpg", "/quorum-tg.jpg", "/quorum-poll.jpg"],
+    title: "Quorum — Project Manager",
+    category: "Farcaster (Mini App)",
+    description:
+      "Quorum is a Farcaster mini app that enables creators, DAOs, and communities to create polls, collect votes, and visualize sentiment in real time with a fast, lightweight user experience.",
+    metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
+    backgroundSlides: ["/quorum.jpg", "/quorum-tg.jpg", "/quorum-poll.jpg"],
 
-  challenge:
-    "Farcaster lacked a lightweight, intuitive polling tool that allowed communities to quickly gauge sentiment without leaving the platform. The challenge was to design, build, and launch a mini app that balanced speed, usability, and engagement while shipping within a short delivery window.",
+    challenge:
+      "Farcaster lacked a lightweight, intuitive polling tool that allowed communities to quickly gauge sentiment without leaving the platform. The challenge was to design, build, and launch a mini app that balanced speed, usability, and engagement while shipping within a short delivery window.",
 
-  solution:
-    "Built and launched Quorum, a Farcaster-native polling mini app that allows fast poll creation, real-time result visualization, and optional incentives to drive engagement, all optimized for quick interactions.",
+    solution:
+      "Built and launched Quorum, a Farcaster-native polling mini app that allows fast poll creation, real-time result visualization, and optional incentives to drive engagement, all optimized for quick interactions.",
 
-  responsibilities: [
-    "Wrote and executed a 2-month product and delivery roadmap",
-    "Assembled and coordinated a cross-functional team across design, development, and operations",
-    "Managed day-to-day task execution and development milestones",
-    "Improved project visibility and internal communication workflows",
-    "Led the end-to-end product launch on Farcaster",
-    "Developed the post-launch marketing and adoption strategy",
-  ],
+    responsibilities: [
+      "Wrote and executed a 2-month product and delivery roadmap",
+      "Assembled and coordinated a cross-functional team across design, development, and operations",
+      "Managed day-to-day task execution and development milestones",
+      "Improved project visibility and internal communication workflows",
+      "Led the end-to-end product launch on Farcaster",
+      "Developed the post-launch marketing and adoption strategy",
+    ],
 
-  results: [
-    "Successfully launched the Quorum mini app on Farcaster",
-    "Delivered a functional, user-friendly polling experience aligned with community needs",
-    "Enabled creators and communities to collect real-time sentiment without friction",
-    "Established a clear roadmap for future adoption, engagement, and feature expansion",
-  ],
+    results: [
+      "Successfully launched the Quorum mini app on Farcaster",
+      "Delivered a functional, user-friendly polling experience aligned with community needs",
+      "Enabled creators and communities to collect real-time sentiment without friction",
+      "Established a clear roadmap for future adoption, engagement, and feature expansion",
+    ],
 
-  timeline: "3 months",
+    timeline: "3 months",
 
-  services: [
-    "Product Management",
-    "Project Delivery",
-    "Cross-Functional Coordination",
-    "Launch Strategy",
-  ],
-},
+    services: [
+      "Product Management",
+      "Project Delivery",
+      "Cross-Functional Coordination",
+      "Launch Strategy",
+    ],
+  },
 
+  "beast-raid-lead": {
+    title: "Project Beast — Raid Lead & Community Manager",
+    category: "Community & Marketing Strategy",
+    description:
+      "Project Beast is a community-driven crypto project that required stabilization and renewed momentum after being CTO’d. The focus was on restoring engagement, controlling narrative, and rebuilding confidence through coordinated community and marketing efforts.",
+
+    metrics: ["$7.2M ATH", "5K+ Community", "High-Impact Raid Campaigns"],
+
+    backgroundSlides: [
+      "/beast-seller.jpg",
+      "/beast-raid-tg.jpg",
+      "/beast-community.jpg",
+    ],
+
+    challenge:
+      "After the project was CTO’d, Project Beast faced declining confidence, fragmented communication, and reduced engagement. The challenge was to stabilize operations, regain community trust, and rebuild momentum in a highly competitive market environment.",
+
+    solution:
+      "Took over community operations and led coordinated bullposting, raid execution, and narrative-driven marketing. Implemented structured community management, strategic KOL engagement, and guerrilla-style campaigns to restore visibility and sustain market interest.",
+
+    responsibilities: [
+      "Led bullposting and narrative control across social platforms",
+      "Organized and executed coordinated raid campaigns during key moments",
+      "Managed community operations and daily engagement post-CTO",
+      "Stabilized communication and community sentiment",
+      "Coordinated KOL activations to amplify reach and credibility",
+      "Applied guerrilla marketing tactics for organic visibility growth",
+    ],
+
+    results: [
+      "Contributed to Project Beast reaching a $7.2M all-time high market cap",
+      "Restored community engagement and sustained daily activity",
+      "Improved project visibility through coordinated raids and narrative control",
+      "Re-established confidence following post-CTO instability",
+    ],
+
+    timeline: "Ongoing / Growth Phase",
+
+    services: [
+      "Community Management",
+      "Raid Leadership",
+      "Narrative Marketing",
+      "KOL Coordination",
+      "Guerrilla Marketing Strategy",
+    ],
+  },
+
+  "moaner-project-marketer": {
+    title: "Moaner — Project Marketer",
+    category: "Marketing & Growth Strategy",
+    description:
+      "Moaner is an Ethereum-based project inspired by a Matt Furie character. The project achieved strong market traction through coordinated marketing, narrative control, and strategic outreach, ultimately reaching a $18.8M all-time high market cap.",
+
+    metrics: ["$18.8M ATH", "10K+ Holders", "Sustained Market Visibility"],
+
+    backgroundSlides: [
+      "/moaner.jpg",
+      "/moaner-chads.jpg",
+      "/moaner-cto.jpg",
+    ],
+
+    challenge:
+      "In a highly competitive meme-token landscape, Moaner needed rapid visibility, strong narrative positioning, and sustained engagement to stand out and convert attention into investor confidence and capital inflow.",
+
+    solution:
+      "Executed a narrative-driven growth strategy centered on aggressive visibility, coordinated bullposting, and human capital deployment. Focused on community structure, KOL amplification, and direct investor outreach to accelerate momentum.",
+
+    responsibilities: [
+      "Facilitated consistent bullposting to establish and maintain market narratives",
+      "Recruited and managed raiders and moderators to drive engagement",
+      "Maintained control over community spaces and messaging",
+      "Onboarded and coordinated KOLs to amplify reach and credibility",
+      "Conducted direct investor outreach to strengthen momentum and capital inflow",
+    ],
+
+    results: [
+      "Contributed directly to Moaner reaching a $18.8M all-time high market cap",
+      "Sustained high visibility across social platforms during peak momentum",
+      "Strengthened investor confidence through narrative consistency and outreach",
+      "Built an engaged, well-coordinated community structure",
+    ],
+
+    timeline: "Growth Phase",
+
+    services: [
+      "Project Marketing",
+      "Narrative Strategy",
+      "Community Coordination",
+      "KOL Management",
+      "Investor Outreach",
+    ],
+  },
+  "electrogle-project-marketer": {
+    title: "ELECTROGLE — Marketing Strategist & Raid Lead",
+    category: "Early-Stage Marketing & Growth",
+    description:
+      "$ELECTROGLE is a meme token inspired by a character from a Matt Furie book. The project achieved significant early-stage growth through coordinated marketing execution, narrative building, and exposure-driven campaigns.",
+
+    metrics: ["$50K → $535K ATH", "3K+ Community", "Daily X & TG Activity"],
+
+    backgroundSlides: [
+      "/electro.jpg",
+      "/electro-tg.jpg",
+      "/electro-raids.jpg",
+    ],
+
+    challenge:
+      "At an early stage with a low market cap and limited visibility, $ELECTROGLE needed rapid awareness, narrative clarity, and coordinated exposure to gain traction and compete for attention in a crowded market.",
+
+    solution:
+      "Took over marketing operations during the early growth phase and executed a strategy centered on narrative development, consistent bullposting, KOL coordination, and structured raid execution to accelerate momentum.",
+
+    responsibilities: [
+      "Took over marketing operations at approximately $45K market cap",
+      "Coordinated bullposting to build awareness and narrative strength",
+      "Managed KOL activations to expand reach and credibility",
+      "Organized and led raid operations to increase engagement and visibility",
+    ],
+
+    results: [
+      "Scaled $ELECTROGLE from ~$50K market cap to over $535K ATH",
+      "Increased project visibility through coordinated marketing campaigns",
+      "Established sustained daily engagement across social platforms",
+      "Delivered strong early-stage growth and market traction",
+    ],
+
+    timeline: "Early Growth Phase",
+
+    services: [
+      "Marketing Strategy",
+      "Raid Leadership",
+      "Narrative Development",
+      "KOL Coordination",
+      "Community Activation",
+    ],
+  },
 };
 
 type ProjectKey = keyof typeof projects;
@@ -209,10 +345,10 @@ const BackgroundCarousel = ({ slides }: { slides: string[] }) => {
               style={
                 gradient.startsWith("/")
                   ? {
-                    backgroundImage: `url(${gradient})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }
+                      backgroundImage: `url(${gradient})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
                   : undefined
               }
             >
@@ -230,10 +366,11 @@ const BackgroundCarousel = ({ slides }: { slides: string[] }) => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all ${index === selectedIndex
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === selectedIndex
                 ? "bg-foreground w-6"
                 : "bg-foreground/40 hover:bg-foreground/60"
-              }`}
+            }`}
             onClick={() => emblaApi?.scrollTo(index)}
           />
         ))}
