@@ -14,9 +14,9 @@ const expertise = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="relative py-24">
+      <div className="container px-6 mx-auto">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Image/Visual Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -25,16 +25,16 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 border border-border overflow-hidden">
+            <div className="overflow-hidden border aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 border-border">
               {/* Abstract Pattern */}
-              <div className="absolute inset-0 grid-pattern opacity-50" />
+              <div className="absolute inset-0 opacity-50 grid-pattern" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48 rounded-full bg-gradient-primary animate-pulse-glow" />
+                <img src="/user.jpg" alt="user" className="w-48 h-48 rounded-full bg-gradient-primary animate-pulse-glow"   />
               </div>
               {/* Decorative Elements */}
-              <div className="absolute top-8 left-8 w-20 h-20 border-2 border-primary/30 rounded-xl rotate-12" />
-              <div className="absolute bottom-8 right-8 w-16 h-16 border-2 border-accent/30 rounded-full" />
-              <div className="absolute top-1/2 right-12 w-24 h-24 border-2 border-primary/20 rounded-2xl -rotate-6" />
+              <div className="absolute w-20 h-20 border-2 top-8 left-8 border-primary/30 rounded-xl rotate-12" />
+              <div className="absolute w-16 h-16 border-2 rounded-full bottom-8 right-8 border-accent/30" />
+              <div className="absolute w-24 h-24 border-2 top-1/2 right-12 border-primary/20 rounded-2xl -rotate-6" />
             </div>
             
             {/* Floating Badge */}
@@ -43,9 +43,9 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-6 -right-6 px-6 py-4 rounded-2xl bg-card border border-border shadow-lg"
+              className="absolute px-6 py-4 border shadow-lg -bottom-6 -right-6 rounded-2xl bg-card border-border"
             >
-              <div className="text-3xl font-display font-bold text-gradient">5+</div>
+              <div className="text-3xl font-bold font-display text-gradient">5+</div>
               <div className="text-sm text-muted-foreground">Years in Web3</div>
             </motion.div>
           </motion.div>
@@ -57,10 +57,10 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+            <h2 className="mb-6 text-4xl font-bold md:text-5xl font-display">
               About <span className="text-gradient">Me</span>
             </h2>
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mb-8">
+            <div className="mb-8 space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
                 I'm a Web3-native marketer and project manager with a passion for 
                 building the decentralized future. With over 5 years of experience 
@@ -86,7 +86,7 @@ const AboutSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="flex items-center gap-2 text-foreground"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-primary" />
                   <span className="text-sm">{item}</span>
                 </motion.div>
               ))}

@@ -9,7 +9,7 @@ const projects = [
     category: "Bots",
     description:
       "I began as the Raid Lead, then transitioned into Social Media Manager, where I helped drive and scale their growth.",
-    metrics: ["50K+ Users", "$10M TVL", "200% Growth"],
+    metrics: ["$5M TVL", "15K Active Users", "50+ Partnerships"],
     links: [
       {
         label: "Odin Telegram Bots",
@@ -23,7 +23,7 @@ const projects = [
     category: "PCP",
     description:
       "I served as Project Manager and Community Manager for PowerCouple, which launched in April 2024",
-    metrics: ["10K NFTs Sold", "5K ETH Volume", "Sold Out"],
+     metrics: ["50K Community Members", "$696K ATH", "100K+ NFTs Traded"],
     links: [
      
       {
@@ -39,7 +39,7 @@ const projects = [
     category: "Operations",
     description:
       "CRAZYLIVEDAO is a Chinese-owned company based in the U.S. focused on cash-flow education for the Chinese community.",
-    metrics: ["100K+ Players", "1M+ Transactions", "Top 10 Game"],
+    metrics: ["$20M Treasury", "10K+ Voters", "WEEX CEX Listing"],
    links: [
       {
         label: "Crazylive.ai",
@@ -56,48 +56,21 @@ const projects = [
     ],
     gradient: "from-primary/20 to-accent/20",
   },
-  // {
-  //   title: "DAO Community Growth",
-  //   category: "DAO",
-  //   description:
-  //     "Built and scaled a thriving DAO community from scratch, establishing governance frameworks and engagement strategies.",
-  //   metrics: ["25K Members", "500+ Proposals", "Active Governance"],
-  //   links: [
-  //     {
-  //       label: "Odin link",
-  //       value: "https://X.com/odincoinsol",
-  //     },
-  //   ],
-  //   gradient: "from-accent/20 to-primary/20",
-  // },
-  // {
-  //   title: "Layer 2 Ecosystem",
-  //   category: "Infrastructure",
-  //   description:
-  //     "Managed ecosystem growth for a Layer 2 solution, onboarding developers and driving adoption.",
-  //   metrics: ["100+ dApps", "1M+ TXs/Day", "Top 5 L2"],
-  //   links: [
-  //     {
-  //       label: "Odin link",
-  //       value: "https://X.com/odincoinsol",
-  //     },
-  //   ],
-  //   gradient: "from-primary/20 to-accent/20",
-  // },
-  // {
-  //   title: "Token Launch Campaign",
-  //   category: "Token",
-  //   description:
-  //     "Executed a successful token launch with comprehensive marketing across multiple channels.",
-  //   metrics: ["$50M MCap", "100K Holders", "15 Exchanges"],
-  //   links: [
-  //     {
-  //       label: "Odin link",
-  //       value: "https://X.com/odincoinsol",
-  //     },
-  //   ],
-  //   gradient: "from-accent/20 to-primary/20",
-  // },
+   {
+    title: "Quorum  Project Manager",
+    category: "Project Manager",
+    description:
+    "Quorum is a Farcaster mini app that allows users to create simple polls, collect votes, and visualize community sentiment in real time.",
+       metrics: ["5K+ Users", "25K+ Votes Cast", "Live on Farcaster"],
+   links: [
+      {
+        label: "Beastsellermeme",
+        value: "https://t.me/beastsellermeme",
+      },
+    ],
+    gradient: "from-primary/20 to-accent/20",
+  },
+  
 ];
 
 const Projects = () => {

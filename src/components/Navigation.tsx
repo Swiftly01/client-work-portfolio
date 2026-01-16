@@ -32,14 +32,14 @@ const Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container px-6 py-4 mx-auto">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-display font-bold text-gradient">
-            FIGMS
+          <Link to="/" className="text-2xl font-bold font-display text-gradient">
+            RICVINNY
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="items-center hidden gap-8 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -60,7 +60,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
             <button
               className="text-foreground"
@@ -73,7 +73,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in bg-background rounded-lg">
+          <div className="pt-4 pb-4 mt-4 border-t rounded-lg md:hidden border-border animate-fade-in bg-background">
             <div className="flex flex-col gap-4 px-2">
               {navLinks.map((link) => (
                 <Link

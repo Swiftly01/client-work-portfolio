@@ -15,19 +15,36 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useEmail } from "@/hooks/useEmail";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Please enter a valid email").max(255, "Email must be less than 255 characters"),
-  project: z.string().trim().min(1, "Project type is required").max(100, "Project type must be less than 100 characters"),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email")
+    .max(255, "Email must be less than 255 characters"),
+  project: z
+    .string()
+    .trim()
+    .min(1, "Project type is required")
+    .max(100, "Project type must be less than 100 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+export type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -38,22 +55,23 @@ const ContactSection = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  const { isLoading, sendEmail } = useEmail();
+
+  const onSubmit = async (data: ContactFormData) => {
+    const success = sendEmail(data);
+    if (success) {
+      form.reset();
+    }
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="relative py-24">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,13 +80,13 @@ const ContactSection = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <div className="text-center mb-9">
+            <h2 className="mb-6 text-4xl font-bold md:text-6xl font-display">
               Let's Build Something{" "}
               <span className="text-gradient">Amazing</span>
             </h2>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Ready to take your Web3 project to the next level? Let's discuss 
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
+              Ready to take your Web3 project to the next level? Let's discuss
               how I can help you achieve your goals.
             </p>
           </div>
@@ -79,17 +97,22 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-card border border-border rounded-2xl p-8 md:p-10 mb-12"
+            className="p-8 border mb-9 bg-card border-border rounded-2xl md:p-10"
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
+                <div className="grid gap-6 md:grid-cols-2">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Your Name</FormLabel>
+                        <FormLabel className="text-foreground">
+                          Your Name
+                        </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="John Doe"
@@ -106,7 +129,9 @@ const ContactSection = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Email Address</FormLabel>
+                        <FormLabel className="text-foreground">
+                          Email Address
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="email"
@@ -125,7 +150,9 @@ const ContactSection = () => {
                   name="project"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-foreground">Project Type</FormLabel>
+                      <FormLabel className="text-foreground">
+                        Project Type
+                      </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="e.g., DeFi Protocol, NFT Collection, DAO..."
@@ -142,7 +169,9 @@ const ContactSection = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-foreground">Your Message</FormLabel>
+                      <FormLabel className="text-foreground">
+                        Your Message
+                      </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Tell me about your project and how I can help..."
@@ -154,44 +183,18 @@ const ContactSection = () => {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" variant="hero" size="xl" className="w-full group">
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="xl"
+                  className="w-full group"
+                >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {isLoading ? "Sending...." : "Send Message"}
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </form>
             </Form>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
-            <a
-              href="#"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary border border-border hover:border-primary/50 transition-all duration-300 group"
-            >
-              <Twitter className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">Twitter</span>
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary border border-border hover:border-primary/50 transition-all duration-300 group"
-            >
-              <MessageCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">Discord</span>
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary border border-border hover:border-primary/50 transition-all duration-300 group"
-            >
-              <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">Email</span>
-            </a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,84 +1,132 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Send, MapPin } from "lucide-react";
+import {
+  Mail,
+  MessageCircle,
+  Send,
+  MapPin,
+  TicketCheckIcon,
+} from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
+import { SiTelegram, SiUpwork, SiFiverr } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+import { useEmail } from "@/hooks/useEmail";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@web3marketer.com",
-    href: "mailto:hello@web3marketer.com"
+    value: "vincenthypeman@gmail.com",
+    href: "mailto:vincenthypeman@gmail.com",
   },
+
   {
-    icon: MessageCircle,
-    title: "Discord",
-    value: "@web3marketer",
-    href: "#"
-  },
-  {
-    icon: Send,
+    icon: SiTelegram,
     title: "Telegram",
-    value: "@web3marketer",
-    href: "#"
+    value: "t.me/ricvinny",
+    href: "http://t.me/ricvinny",
   },
   {
-    icon: MapPin,
-    title: "Location",
-    value: "Remote / Worldwide",
-    href: "#"
-  }
+    icon: SiUpwork,
+    title: "Upwork",
+    value: "Upwork Profile",
+    href: "https://www.upwork.com/freelancers/~018597e4d4e62a265a",
+  },
+  {
+    icon: SiFiverr,
+    title: "Fiverr",
+    value: "fiverr.com/godsapplematt",
+    href: "http://fiverr.com/godsapplematt",
+  },
 ];
 
+const contactSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email")
+    .max(255, "Email must be less than 255 characters"),
+  project: z
+    .string()
+    .trim()
+    .min(1, "Project type is required")
+    .max(100, "Project type must be less than 100 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
+});
+
+export type ContactFormData = z.infer<typeof contactSchema>;
+
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    project: "",
-    message: ""
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      project: "",
+      message: "",
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", project: "", message: "" });
+  const { isLoading, sendEmail } = useEmail();
+
+  const onSubmit = (data: ContactFormData) => {
+    const success = sendEmail(data);
+    if (success) {
+      form.reset();
+    }
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Navigation />
-      <section className="py-24 pt-32 relative">
+      <section className="relative py-24 pt-32">
         {/* Background Glow */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container relative z-10 px-6 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="mb-16 text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="mb-6 text-4xl font-bold md:text-5xl">
               Let's <span className="text-gradient">Connect</span>
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Ready to elevate your Web3 project? Get in touch and let's discuss 
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+              Ready to elevate your Web3 project? Get in touch and let's discuss
               how we can work together.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid max-w-5xl gap-12 mx-auto lg:grid-cols-2">
             {/* Contact Methods */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -86,20 +134,22 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
-              
+              <h2 className="mb-6 text-2xl font-semibold">Get in Touch</h2>
+
               <div className="grid gap-4">
                 {contactMethods.map((method, index) => (
                   <a
                     key={index}
                     href={method.href}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group"
+                    className="flex items-center gap-4 p-4 transition-all border rounded-xl bg-card border-border hover:border-primary/50 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="flex items-center justify-center w-12 h-12 transition-colors rounded-xl bg-primary/10 group-hover:bg-primary/20">
                       <method.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm text-muted-foreground">{method.title}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {method.title}
+                      </div>
                       <div className="font-medium">{method.value}</div>
                     </div>
                   </a>
@@ -108,64 +158,121 @@ const Contact = () => {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="p-8 rounded-2xl bg-card border border-border">
-                <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm text-muted-foreground mb-2 block">Name</label>
-                      <Input
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-                      <Input
-                        type="email"
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="text-sm text-muted-foreground mb-2 block">Project Name</label>
-                    <Input
-                      placeholder="Your project name"
-                      value={formData.project}
-                      onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="text-sm text-muted-foreground mb-2 block">Message</label>
-                    <Textarea
-                      placeholder="Tell me about your project..."
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                    />
-                  </div>
+            <></>
+            <Form {...form}>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="p-8 border rounded-2xl bg-card border-border">
+                  <h2 className="mb-6 text-2xl font-semibold">
+                    Send a Message
+                  </h2>
 
-                  <Button type="submit" className="w-full">
-                    Send Message
-                    <Send className="w-4 h-4 ml-2" />
-                  </Button>
-                </form>
-              </div>
-            </motion.div>
+                  <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div>
+                       
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-foreground">
+                                Your Name
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="John Doe"
+                                  className="bg-secondary border-border focus:border-primary"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      <div>
+                       
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-foreground">
+                                Email Address
+                              </FormLabel>
+                              <FormControl>
+                                <Input
+                                  type="email"
+                                  placeholder="john@example.com"
+                                  className="bg-secondary border-border focus:border-primary"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="project"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground">
+                              Project Type
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="e.g., DeFi Protocol, NFT Collection, DAO..."
+                                className="bg-secondary border-border focus:border-primary"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground">
+                              Your Message
+                            </FormLabel>
+                            <FormControl>
+                              <Textarea
+                                placeholder="Tell me about your project and how I can help..."
+                                className="bg-secondary border-border focus:border-primary min-h-[150px] resize-none"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full">
+                     {isLoading ? "Sending...." : "Send Message"}
+                      <Send className="w-4 h-4 ml-2" />
+                    </Button>
+                  </form>
+                </div>
+              </motion.div>
+            </Form>
           </div>
         </div>
       </section>
