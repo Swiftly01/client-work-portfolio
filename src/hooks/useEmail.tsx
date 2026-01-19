@@ -9,7 +9,7 @@ export function useEmail() {
   useEffect(() => emailjs.init("ozjkkSzEoGWgm6O5x"), []);
 
   const sendEmail = async (data: ContactFormData) => {
-    const serviceId = "service_rxzv4ck";
+    const serviceId = "service_pk5rzx4";
     const templateId = "template_c6gx69e";
     try {
       setLoading(true);
