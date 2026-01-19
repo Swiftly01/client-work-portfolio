@@ -6,11 +6,11 @@ import { useToast } from "@/hooks/use-toast";
 export function useEmail() {
   const { toast } = useToast();
   const [isLoading, setLoading] = useState(false);
-  useEffect(() => emailjs.init("ozjkkSzEoGWgm6O5x"), []);
+  useEffect(() => emailjs.init("u1ytRzeS3hNKfY4Gi"), []);
 
   const sendEmail = async (data: ContactFormData) => {
-    const serviceId = "service_pk5rzx4";
-    const templateId = "template_c6gx69e";
+    const serviceId = "service_bxptysl";
+    const templateId = "template_0dd8wwx";
     try {
       setLoading(true);
       await emailjs.send(serviceId, templateId, {
