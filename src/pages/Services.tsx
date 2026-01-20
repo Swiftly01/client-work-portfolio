@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Palette, Megaphone, Users, TrendingUp, Globe, Zap } from "lucide-react";
+import { Palette, Megaphone, Users, TrendingUp, Globe, Zap, UserCheck } from "lucide-react";
 
 const services = [
   {
@@ -33,7 +33,14 @@ const services = [
     icon: Zap,
     title: "Launch Campaigns",
     description: "End-to-end campaign management for token launches, NFT drops, and protocol releases."
-  }
+  },
+  
+  {
+  icon: UserCheck,
+  title: "KOL & Ambassador Campaigns",
+  description: "Strategic KOL and ambassador campaigns focused on authentic reach. We source relevant creators, manage outreach and content, and drive consistent visibility across key Web3 platforms.",
+}
+
 ];
 
 const Services = () => {

@@ -1,4 +1,4 @@
-import { Megaphone, FolderKanban, Users, Zap, Globe, Shield } from "lucide-react";
+import { Megaphone, FolderKanban, Users, Zap, Globe, Shield, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -32,6 +32,12 @@ const services = [
     title: "DAO Operations",
     description: "Governance setup, proposal management, and operational frameworks for decentralized organizations.",
   },
+  {
+  icon: UserCheck,
+  title: "KOL & Ambassador Campaigns",
+  description: "Strategic KOL and ambassador campaigns focused on authentic reach. We source relevant creators, manage outreach and content, and drive consistent visibility across key Web3 platforms.",
+}
+
 ];
 
 const ServicesSection = () => {

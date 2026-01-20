@@ -63,9 +63,15 @@ const OtherSection = () => {
             viewport={{ once: true }}
             className="flex justify-center gap-3 pt-4"
           >
-            <Button size="sm" className="h-8 px-3 text-xs">
-              Get started
-            </Button>
+            <a
+              href="https://wa.me/2348152629929?text=Hi%20I%20am%20interested%20in%20your%20services"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="sm" className="h-8 px-3 text-xs">
+                Get started
+              </Button>
+            </a>
 
             <Button
               size="sm"
