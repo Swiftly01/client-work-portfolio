@@ -7,89 +7,78 @@ const OtherSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section id="other" className="relative py-15">
+    <section id="other" className="relative py-16">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-80 bg-primary/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="space-y-6"
           >
-            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            <h2 className="text-xl font-semibold md:text-2xl">
               How to become a network{" "}
               <span className="text-primary">Marketer</span>
             </h2>
 
-            <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
-              Ready to earn and learn at the same time? Let's discuss how I can
-              help you achieve your goals.
+            <p className="max-w-xl mx-auto mt-2 text-sm text-muted-foreground">
+              Earn and learn at the same time with guided support.
             </p>
-
-            {/* Video Thumbnail */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative max-w-3xl mx-auto mt-8 overflow-hidden cursor-pointer rounded-2xl aspect-video group"
-              onClick={() => setIsVideoOpen(true)}
-            >
-              {/* Video Thumbnail Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30" />
-
-              {/* Placeholder Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/40 to-transparent" />
-              </div>
-
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center w-20 h-20 transition-shadow duration-300 rounded-full shadow-2xl md:w-24 md:h-24 bg-primary shadow-primary/50 group-hover:shadow-primary/70"
-                >
-                  <Play
-                    className="w-8 h-8 ml-1 md:w-10 md:h-10 text-primary-foreground"
-                    fill="currentColor"
-                  />
-                </motion.div>
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 transition-colors duration-300 bg-black/0 group-hover:bg-black/10" />
-            </motion.div>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Minimal Video Card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center gap-4 mt-10 sm:flex-row"
+            onClick={() => setIsVideoOpen(true)}
+            className="flex items-center gap-4 p-4 mx-auto mt-8 border cursor-pointer max-w-md rounded-xl bg-background hover:bg-muted transition"
           >
-            <Button size="lg" className="group">
-              Get Started
-              <Play className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            {/* Small Play Button */}
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+              <Play className="w-5 h-5 ml-0.5" />
+            </div>
+
+            {/* Text */}
+            <div className="text-left">
+              <p className="text-sm font-medium">Watch short video</p>
+              <p className="text-xs text-muted-foreground">
+                Learn how to become a network marketer
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Minimal CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            className="flex justify-center gap-3 pt-4"
+          >
+            <Button size="sm" className="h-8 px-3 text-xs">
+              Get started
             </Button>
-            <Button size="lg" variant="outline">
-              Learn More
+
+            <Button
+              size="sm"
+              variant="ghost"
+              className="h-8 px-3 text-xs text-muted-foreground"
+            >
+              Learn more
             </Button>
           </motion.div>
         </div>
       </div>
 
-      {/* Video Modal */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {isVideoOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -99,26 +88,24 @@ const OtherSection = () => {
             onClick={() => setIsVideoOpen(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl max-h-[80vh] overflow-hidden rounded-xl"
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-4xl overflow-hidden rounded-xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
               <button
                 onClick={() => setIsVideoOpen(false)}
                 className="absolute z-10 p-2 right-2 top-2 text-white/80 hover:text-white"
               >
-                <X className="w-8 h-8" />
+                <X className="w-6 h-6" />
               </button>
 
-              {/* Video Player */}
               <video
                 src="/videos/network-marketer.mp4"
                 poster="/videos/network-marketer-thumbnail.jpg"
-                className="object-contain w-full h-full rounded-xl"
+                className="w-full h-full object-contain rounded-xl"
                 controls
                 autoPlay
                 playsInline
@@ -126,6 +113,47 @@ const OtherSection = () => {
             </motion.div>
           </motion.div>
         )}
+      </AnimatePresence> */}
+      <AnimatePresence>
+        {" "}
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            {" "}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-5xl max-h-[80vh] overflow-hidden rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {" "}
+              {/* Close Button */}{" "}
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute z-10 p-2 right-2 top-2 text-white/80 hover:text-white"
+              >
+                {" "}
+                <X className="w-8 h-8" />{" "}
+              </button>{" "}
+              {/* Video Player */}{" "}
+              <video
+                src="/videos/network-marketer.mp4"
+                poster="/videos/network-marketer-thumbnail.jpg"
+                className="object-contain w-full h-full rounded-xl"
+                controls
+                autoPlay
+                playsInline
+              />{" "}
+            </motion.div>{" "}
+          </motion.div>
+        )}{" "}
       </AnimatePresence>
     </section>
   );

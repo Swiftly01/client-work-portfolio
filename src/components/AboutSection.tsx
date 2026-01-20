@@ -14,7 +14,7 @@ const expertise = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative py-16">
       <div className="container px-6 mx-auto">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Image/Visual Side */}
@@ -29,7 +29,7 @@ const AboutSection = () => {
               {/* Abstract Pattern */}
               <div className="absolute inset-0 opacity-50 grid-pattern" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <img src="/user.jpg" alt="user" className="w-48 h-48 rounded-full bg-gradient-primary animate-pulse-glow"   />
+                <img src="/profile-picture.jpeg" alt="user" className="object-fit w-48 h-48 md:w-60 md:h-60 rounded-full bg-gradient-primary animate-pulse-glow "   />
               </div>
               {/* Decorative Elements */}
               <div className="absolute w-20 h-20 border-2 top-8 left-8 border-primary/30 rounded-xl rotate-12" />

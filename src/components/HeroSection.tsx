@@ -50,9 +50,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto mb-10 text-lg md:text-xl text-muted-foreground"
           >
-            I help Web3 founders, DAOs, and startups turn complex blockchain
-            ideas into well-executed products through strategic project
-            management, technical coordination, and growth-focused marketing.
+            I help Web3 founders, DAOs, meme projects, CTOs, and crypto startups turn complex blockchain ideas into well-executed products through strategic project management, technical coordination, and growth-focused marketing.
           </motion.p>
 
           {/* CTA Buttons */}

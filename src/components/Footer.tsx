@@ -46,7 +46,7 @@ const Footer = () => {
               RICVINNY
             </h3>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Helping businesses grow through strategic network marketing and digital solutions.
+             Helping your Business grow Using strategic, well-thought-out experiential marketing solutions.
             </p>
           </div>
 
