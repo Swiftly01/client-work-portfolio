@@ -25,7 +25,7 @@ const socialLinks = [
   { name: "Email", icon: Mail, href: "mailto:vincenthypeman@gmail.com" },
   { name: "TikTok", icon: TikTokIcon, href: "https://www.tiktok.com/@ricvinny?_r=1&_t=ZS-931CH8JDLZn" },
   { name: "Upwork", icon: UpworkIcon, href: "https://www.upwork.com/freelancers/~018597e4d4e62a265a" },
-  { name: "Fiverr", icon: FiverrIcon, href: "http://fiverr.com/godsapplematt" },
+  // { name: "Fiverr", icon: FiverrIcon, href: "http://fiverr.com/godsapplematt" },
 ];
 
 const Footer = () => {

@@ -48,12 +48,12 @@ const contactMethods = [
     value: "Upwork Profile",
     href: "https://www.upwork.com/freelancers/~018597e4d4e62a265a",
   },
-  {
-    icon: SiFiverr,
-    title: "Fiverr",
-    value: "fiverr.com/godsapplematt",
-    href: "http://fiverr.com/godsapplematt",
-  },
+  // {
+  //   icon: SiFiverr,
+  //   title: "Fiverr",
+  //   value: "fiverr.com/godsapplematt",
+  //   href: "http://fiverr.com/godsapplematt",
+  // },
 ];
 
 const contactSchema = z.object({
