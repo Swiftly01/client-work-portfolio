@@ -11,10 +11,22 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import CaseStudy from "./pages/CaseStudy";
+import ReactGA from "react-ga4";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+function App() {
+  useEffect(() => {
+    ReactGA.initialize("G-YK1FGWGLCR");
+
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "App.jsx",
+    });
+  }, []);
+
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <TooltipProvider>
@@ -34,7 +46,7 @@ const App = () => (
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
-  </QueryClientProvider>
-);
+  </QueryClientProvider>;
+}
 
 export default App;
