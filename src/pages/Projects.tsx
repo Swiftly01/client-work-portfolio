@@ -29,8 +29,7 @@ const projects = [
         label: "Powercouple",
         value: "https://x.com/powercouplesol",
       },
-     
-    ],  
+    ],
     gradient: "from-accent/20 to-primary/20",
   },
   {
@@ -86,6 +85,10 @@ const projects = [
     links: [
       {
         label: "Beastraidlead",
+        value: "https://t.me/beastsellercto",
+      },
+      {
+        label: "Twitter",
         value: "https://x.com/RicvinnyNetwork/status/1932410280069218379?s=20",
       },
     ],
@@ -103,8 +106,12 @@ const projects = [
     ],
     links: [
       {
-        label: "moaner",
-        value: "https://x.com/RicvinnyNetwork/status/1974922569179422850?s=20",
+        label: "Moaner",
+        value: "https://www.moaner.xyz/",
+      },
+      {
+        label: "Twitter",
+        value: "https://x.com/i/status/1970090342276837472",
       },
     ],
     gradient: "from-primary/20 to-accent/20",
@@ -117,8 +124,12 @@ const projects = [
     metrics: ["$50K → $535K ATH", "3K+ Community", "Daily X & TG Activity"],
     links: [
       {
-        label: "moaner",
-        value: "https://x.com/RicvinnyNetwork/status/1974922569179422850?s=20",
+        label: "Electrogle",
+        value: "https://electrogleoneth.xyz",
+      },
+      {
+        label: "Twitter",
+        value: "https://x.com/RicvinnyNetwork/status/1931071320995054014",
       },
     ],
     gradient: "from-primary/20 to-accent/20",
