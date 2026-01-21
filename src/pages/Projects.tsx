@@ -26,10 +26,11 @@ const projects = [
     metrics: ["50K Community Members", "$696K ATH", "100K+ NFTs Traded"],
     links: [
       {
-        label: "Twitter",
-        value: " https://x.com/RicvinnyNetwork/status/2008448400497266854?s=20",
+        label: "Powercouple",
+        value: "https://x.com/powercouplesol",
       },
-    ],
+     
+    ],  
     gradient: "from-accent/20 to-primary/20",
   },
   {
@@ -41,15 +42,19 @@ const projects = [
     links: [
       {
         label: "Crazylive.ai",
-        value: "Crazylive.ai",
+        value: "https://Crazylive.ai",
       },
       {
         label: "Crazylivedao",
-        value: "X.com/crazylivedao",
+        value: "https://X.com/crazylivedao",
       },
       {
         label: "Crazylivetoken",
         value: "https://t.me/crazylivetoken",
+      },
+      {
+        label: "Twitter",
+        value: "https://x.com/RicvinnyNetwork/status/2008448400497266854",
       },
     ],
     gradient: "from-primary/20 to-accent/20",
