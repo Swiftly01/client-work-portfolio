@@ -56,7 +56,7 @@ function AppContent() {
 function App() {
   // Initialize GA once
   useEffect(() => {
-    ReactGA.initialize("G-YK1FGWGLCR");
+    ReactGA.initialize("G-EDPY704WSZ");
   }, []);
 
   return (
