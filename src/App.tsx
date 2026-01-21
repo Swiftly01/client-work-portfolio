@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -16,23 +16,28 @@ import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
-function App() {
-  useEffect(() => {
-    ReactGA.initialize("G-YK1FGWGLCR");
+// Custom hook to track pageviews on route change
+function usePageTracking() {
+  const location = useLocation();
 
+  useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
-      page: window.location.pathname,
-      title: "App.jsx",
+      page: location.pathname + location.search,
+      title: document.title,
     });
-  }, []);
+  }, [location]);
+}
 
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+function AppContent() {
+  usePageTracking(); // Tracks every route change
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
@@ -40,13 +45,25 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/case-study/:slug" element={<CaseStudy />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>;
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+}
+
+function App() {
+  // Initialize GA once
+  useEffect(() => {
+    ReactGA.initialize("G-YK1FGWGLCR");
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
 }
 
 export default App;
