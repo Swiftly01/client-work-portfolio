@@ -82,7 +82,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative">
+    <section id="projects" className="relative pb-16">
       {/* Background Accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/30 to-transparent" />
 

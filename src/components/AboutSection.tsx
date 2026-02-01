@@ -28,12 +28,21 @@ const AboutSection = () => {
             <div className="overflow-hidden border aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 border-border">
               <div className="absolute inset-0 opacity-50 grid-pattern" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src="/profile-2.jpeg"
-                  alt="user"
-                  className="rounded-full object-fill h-48 w-48 bg-gradient-primary animate-pulse-glow"
-                />
+                <div className="relative">
+                  {/* Glow ring */}
+                  <div className="absolute inset-0 rounded-2xl blur-2xl bg-primary/30 -z-10" />
+
+                  {/* Image frame */}
+                  <div className="p-2 border rounded-2xl bg-background/60 backdrop-blur border-border">
+                    <img
+                      src="/profile-2.jpeg"
+                      alt="user"
+                      className="w-64 h-80 object-cover object-top rounded-xl shadow-2xl"
+                    />
+                  </div>
+                </div>
               </div>
+
               <div className="absolute w-20 h-20 border-2 top-8 left-8 border-primary/30 rounded-xl rotate-12" />
               <div className="absolute w-16 h-16 border-2 rounded-full bottom-8 right-8 border-accent/30" />
               <div className="absolute w-24 h-24 border-2 top-1/2 right-12 border-primary/20 rounded-2xl -rotate-6" />
