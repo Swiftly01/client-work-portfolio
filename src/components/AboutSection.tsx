@@ -57,7 +57,7 @@ const AboutSection = () => {
               className="absolute px-6 py-4 border shadow-lg -bottom-6 -right-6 rounded-2xl bg-card border-border"
             >
               <div className="text-3xl font-bold font-display text-gradient">
-                5+
+                3+
               </div>
               <div className="text-sm text-muted-foreground">Years in Web3</div>
             </motion.div>
