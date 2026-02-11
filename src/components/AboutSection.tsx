@@ -76,7 +76,7 @@ const AboutSection = () => {
             <div className="mb-8 space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
                 I'm a Web3-native marketer and project manager with a passion
-                for building the decentralized future. With over 5 years of
+                for building the decentralized future. With over 3 years of
                 experience in the blockchain space, I've helped launch and scale
                 dozens of successful projects.
               </p>
