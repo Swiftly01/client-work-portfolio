@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
+
 const expertise = [
   "DeFi Protocol Marketing",
   "NFT & Gaming Projects",
@@ -35,7 +36,7 @@ const AboutSection = () => {
                   {/* Image frame */}
                   <div className="p-2 border rounded-2xl bg-background/60 backdrop-blur border-border">
                     <img
-                      src="/profile-2.jpeg"
+                      src='/profile-ricvinny.jpeg'
                       alt="user"
                       className="w-64 h-80 object-cover object-top rounded-xl shadow-2xl"
                     />
